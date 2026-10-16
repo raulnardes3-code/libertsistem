@@ -1,5 +1,109 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-body { font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+@theme {
+  --color-green-900: #0D4E33;
+  --color-green-800: #123B2A;
+  --color-green-700: #1D513B;
+  --color-green-600: #2A6B4F;
+  --color-gold-500: #C5A15A;
+  --color-gold-400: #D4AF37;
+  --color-gold-300: #E0C872;
+  --color-surface: #F8FAF9;
+  --color-surface-alt: #F0F4F1;
+  --color-divider: #E2E8E4;
+  --color-text-primary: #1A2E23;
+  --color-text-secondary: #4A5E52;
+  --color-text-muted: #7A8E82;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-surface text-text-primary;
+  }
+}
+
+@layer utilities {
+  .money-highlight {
+    @apply text-2xl font-bold text-green-900 tabular-nums;
+  }
+  
+  .card-premium {
+    @apply bg-white rounded-xl border border-divider shadow-sm;
+  }
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-gold-500 text-white font-semibold rounded-lg
+      hover:bg-gold-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2
+      disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-green-800 font-semibold rounded-lg border border-divider
+      hover:bg-surface-alt focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2
+      disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200;
+  }
+  
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 text-text-secondary font-medium rounded-lg
+      hover:bg-surface-alt focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2
+      transition-all duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 bg-white border border-divider rounded-lg text-text-primary placeholder-text-muted
+      focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-green-700
+      disabled:bg-surface-alt disabled:cursor-not-allowed transition-all duration-200;
+  }
+  
+  .select-field {
+    @apply w-full px-4 py-3 bg-white border border-divider rounded-lg text-text-primary
+      focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-green-700
+      disabled:bg-surface-alt disabled:cursor-not-allowed transition-all duration-200 appearance-none;
+  }
+  
+  .label-field {
+    @apply block text-sm font-medium text-text-secondary mb-1.5;
+  }
+  
+  .error-text {
+    @apply text-sm text-red-600 mt-1;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  .card-premium {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+    break-inside: avoid !important;
+  }
+  
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+}
+
+.print-only {
+  display: none;
+}
