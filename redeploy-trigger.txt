@@ -1,0 +1,5 @@
+Triggering Vercel redeploy
+
+This file was added automatically by the assistant to trigger a new deployment on Vercel.
+
+Timestamp: 2026-10-16T14:10:00Z
