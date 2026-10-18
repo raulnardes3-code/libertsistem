@@ -10,7 +10,7 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
     <div className="min-h-[calc(100vh-5rem)] flex flex-col justify-between py-8 px-4 sm:px-6 bg-gradient-to-br from-[#06281A] via-[#0D4E33] to-[#051C12]">
       <div className="max-w-4xl mx-auto w-full my-auto">
         {/* Main Hero Card with seamless branding */}
-        <div className="relative bg-gradient-to-br from-[#06281A] via-[#0D4E33] to-[#051C12] text-white rounded-3xl p-8 sm:p-16 shadow-2xl border border-[#C5A15A]/30 overflow-hidden text-center">
+        <div className="relative text-white p-8 sm:p-16 overflow-hidden text-center">
           {/* Ambient Gold Radial Glow */}
           <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#C5A15A]/20 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-20 right-10 w-72 h-72 bg-[#1D513B]/40 rounded-full blur-2xl pointer-events-none" />
@@ -61,32 +61,32 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
 
         {/* Feature Highlights beneath */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="flex items-center gap-3 p-4 bg-white/10 rounded-2xl border border-white/15 shadow-xs backdrop-blur-sm">
+          <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 shadow-xs">
             <div className="w-10 h-10 rounded-xl bg-[#0D4E33]/10 flex items-center justify-center flex-shrink-0">
               <Calculator className="w-5 h-5 text-[#0D4E33]" />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">Simulação Personalizada</p>
-              <p className="text-[11px] text-emerald-100/75">Prazos e parcelas sob medida</p>
+              <p className="text-xs font-bold text-gray-900">Simulação Personalizada</p>
+              <p className="text-[11px] text-gray-500">Prazos e parcelas sob medida</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-4 bg-white/10 rounded-2xl border border-white/15 shadow-xs backdrop-blur-sm">
+          <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 shadow-xs">
             <div className="w-10 h-10 rounded-xl bg-[#0D4E33]/10 flex items-center justify-center flex-shrink-0">
               <TrendingUp className="w-5 h-5 text-[#0D4E33]" />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">Comparação Financeira</p>
+              <p className="text-xs font-bold text-gray-900">Comparação Financeira</p>
               <p className="text-[11px] text-emerald-100/75">Carta vs Financiamento Price</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-4 bg-white/10 rounded-2xl border border-white/15 shadow-xs backdrop-blur-sm">
+          <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 shadow-xs">
             <div className="w-10 h-10 rounded-xl bg-[#0D4E33]/10 flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="w-5 h-5 text-[#0D4E33]" />
             </div>
             <div>
-              <p className="text-xs font-bold text-white">Privacidade Garantida</p>
+              <p className="text-xs font-bold text-gray-900">Privacidade Garantida</p>
               <p className="text-[11px] text-emerald-100/75">Dados seguros em memória (LGPD)</p>
             </div>
           </div>

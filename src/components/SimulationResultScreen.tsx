@@ -177,7 +177,7 @@ export function SimulationResultScreen({
                 <div className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#C5A15A]"></span>
                   <span className="text-gray-900 text-sm font-bold">
-                    Entrada ({Math.round(creditResult.entryPercentage * 100)}%)
+                    Entrada ({(creditResult.entryPercentage * 100).toFixed(2).replace('.', ',')}%)
                   </span>
                 </div>
                 <span className="font-black text-[#123B2A] text-lg">{formatCurrency(creditResult.entryValue)}</span>
@@ -639,7 +639,7 @@ export function SimulationResultScreen({
         <button
           type="button"
           onClick={onApproval}
-          className="btn-ghost text-red-600 hover:bg-red-50 hover:text-red-700"
+          className="btn-primary"
         >
 <CheckCircle2 className="w-4 h-4" />
                   Solicitar aprovação
