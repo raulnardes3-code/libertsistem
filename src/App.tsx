@@ -7,10 +7,12 @@ import { WelcomeScreen } from './components/WelcomeScreen';
 import { ClientFormScreen } from './components/ClientFormScreen';
 import { CreditConfigScreen } from './components/CreditConfigScreen';
 import { SimulationResultScreen } from './components/SimulationResultScreen';
+import { ApprovalScreen } from './components/ApprovalScreen';
 
 const initialClientData: ClientData = {
   fullName: '',
   cpf: '',
+  birthDate: '',
   monthlyIncome: 0,
   state: '',
   maritalStatus: '',
@@ -69,6 +71,10 @@ export default function App() {
     setCurrentStep(3);
   }
 
+  function handleApproval() {
+    setCurrentStep(5);
+  }
+
   // Reset entire simulation (clears memory securely)
   function handleResetSimulation() {
     setClient(initialClientData);
@@ -78,7 +84,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8FAF9] flex flex-col font-sans">
+    <div className={`min-h-screen flex flex-col font-sans ${currentStep === 1 ? 'bg-[#0D4E33]' : 'bg-[#F8FAF9]'}`}>
       <Header />
       {currentStep > 1 && <StepProgressBar currentStep={currentStep} />}
 
@@ -113,7 +119,12 @@ export default function App() {
             onNewSimulation={handleResetSimulation}
             onEditClient={handleEditClient}
             onEditCredit={handleEditCredit}
+            onApproval={handleApproval}
           />
+        )}
+
+        {currentStep === 5 && creditResult && (
+          <ApprovalScreen client={client} creditResult={creditResult} simulationDate={simulationDate} onNewSimulation={handleResetSimulation} />
         )}
       </main>
     </div>

@@ -7,10 +7,10 @@
 export const ADMIN_FEE_RATE = 0.27;
 
 /** Percentuais de entrada permitidos para a carta de crédito */
-export const ALLOWED_ENTRY_PERCENTAGES = [0.08, 0.09, 0.10] as const;
+export const ALLOWED_ENTRY_PERCENTAGES = [0.0819, 0.0895, 0.0929, 0.0969] as const;
 
 /** Percentual de entrada padrão */
-export const DEFAULT_ENTRY_PERCENTAGE = 0.08;
+export const DEFAULT_ENTRY_PERCENTAGE = 0.0819;
 
 /** Prazo mínimo em meses para a carta de crédito */
 export const MIN_TERM_MONTHS = 190;

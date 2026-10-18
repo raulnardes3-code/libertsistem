@@ -4,7 +4,6 @@ import {
   Edit3,
   Settings,
   PlusCircle,
-  LogOut,
   RefreshCw,
   TrendingDown,
   Info,
@@ -29,6 +28,7 @@ interface SimulationResultScreenProps {
   onNewSimulation: () => void;
   onEditClient: () => void;
   onEditCredit: () => void;
+  onApproval: () => void;
 }
 
 const INSTITUTIONS = [
@@ -52,6 +52,7 @@ export function SimulationResultScreen({
   onNewSimulation,
   onEditClient,
   onEditCredit,
+  onApproval,
 }: SimulationResultScreenProps) {
   const [alternativeTerm, setAlternativeTerm] = useState<number | null>(null);
   const [showModal, setShowModal] = useState<'new' | 'finish' | null>(null);
@@ -637,11 +638,11 @@ export function SimulationResultScreen({
 
         <button
           type="button"
-          onClick={() => setShowModal('finish')}
+          onClick={onApproval}
           className="btn-ghost text-red-600 hover:bg-red-50 hover:text-red-700"
         >
-          <LogOut className="w-4 h-4" />
-          Finalizar atendimento
+<CheckCircle2 className="w-4 h-4" />
+                  Solicitar aprovação
         </button>
       </div>
 
@@ -659,18 +660,7 @@ export function SimulationResultScreen({
         onCancel={() => setShowModal(null)}
       />
 
-      <ModalConfirmation
-        isOpen={showModal === 'finish'}
-        title="Finalizar atendimento"
-        message="O atendimento será encerrado e os dados em memória serão limpos. Deseja confirmar?"
-        confirmText="Sim, finalizar atendimento"
-        cancelText="Voltar"
-        onConfirm={() => {
-          setShowModal(null);
-          onNewSimulation();
-        }}
-        onCancel={() => setShowModal(null)}
-      />
+
     </div>
   );
 }

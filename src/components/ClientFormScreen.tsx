@@ -15,6 +15,7 @@ interface ClientFormScreenProps {
 interface FormErrors {
   fullName?: string;
   cpf?: string;
+  birthDate?: string;
   monthlyIncome?: string;
   state?: string;
   maritalStatus?: string;
@@ -46,6 +47,7 @@ export function ClientFormScreen({ initialData, onBack, onNext }: ClientFormScre
     if (!data.fullName.trim()) errs.fullName = 'Nome completo é obrigatório.';
     const cpfClean = cleanCpf(data.cpf);
     if (!cpfClean) errs.cpf = 'CPF é obrigatório.';
+    if (!data.birthDate) errs.birthDate = 'Data de nascimento é obrigatória.';
     else if (!validateCpf(cpfClean)) errs.cpf = 'CPF inválido. Verifique os dígitos.';
     if (data.monthlyIncome <= 0) errs.monthlyIncome = 'Renda mensal deve ser maior que zero.';
     if (!data.state) errs.state = 'Selecione o estado de residência.';
@@ -67,7 +69,7 @@ export function ClientFormScreen({ initialData, onBack, onNext }: ClientFormScre
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const allTouched: Record<string, boolean> = {
-      fullName: true, cpf: true, monthlyIncome: true, state: true, maritalStatus: true,
+      fullName: true, cpf: true, birthDate: true, monthlyIncome: true, state: true, maritalStatus: true,
     };
     if (isMarried) {
       allTouched.spouseFullName = true;
@@ -146,6 +148,21 @@ export function ClientFormScreen({ initialData, onBack, onNext }: ClientFormScre
               inputMode="numeric"
             />
             {touched.cpf && errors.cpf && <p className="error-text">{errors.cpf}</p>}
+          </div>
+
+          {/* Data de nascimento */}
+          <div>
+            <label htmlFor="birthDate" className="label-field">Data de nascimento</label>
+            <input
+              id="birthDate"
+              type="date"
+              className={`input-field ${touched.birthDate && errors.birthDate ? 'border-red-500 focus:ring-red-500' : ''}`}
+              value={formData.birthDate}
+              onChange={(e) => setFormData((prev) => ({ ...prev, birthDate: e.target.value }))}
+              onBlur={() => handleBlur('birthDate')}
+              max={new Date().toISOString().split('T')[0]}
+            />
+            {touched.birthDate && errors.birthDate && <p className="error-text">{errors.birthDate}</p>}
           </div>
 
           {/* Renda Mensal */}
