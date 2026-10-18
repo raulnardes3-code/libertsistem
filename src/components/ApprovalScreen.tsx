@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { CheckCircle2, FileCheck2, ShieldCheck, Clock3 } from 'lucide-react';
+import { CheckCircle2, FileCheck2, ShieldCheck, Clock3, Printer } from 'lucide-react';
 import type { ClientData, CreditCardResult } from '../types';
 import { formatCurrency, formatDateFull, formatMonthsToYears } from '../utils/formatters';
 
@@ -36,7 +36,7 @@ export function ApprovalScreen({ client, creditResult, simulationDate, onNewSimu
   }
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-8 sm:py-12">
+    <main className="approval-page max-w-3xl mx-auto px-4 py-8 sm:py-12">
       <section className="rounded-3xl bg-gradient-to-br from-[#06281A] via-[#0D4E33] to-[#051C12] p-8 sm:p-12 text-center text-white shadow-2xl">
         <CheckCircle2 className="mx-auto size-16 text-[#D4AF37]" />
         <p className="mt-5 text-xs font-bold uppercase tracking-[0.24em] text-[#D4AF37]">Análise concluída</p>
@@ -61,7 +61,10 @@ export function ApprovalScreen({ client, creditResult, simulationDate, onNewSimu
         </div>
         <div className="mt-6 flex items-start gap-3 rounded-xl bg-emerald-50 p-4 text-sm text-emerald-900"><ShieldCheck className="mt-0.5 size-5 shrink-0" /><p>Este documento registra o resultado da simulação e da análise preliminar. A contratação depende da validação cadastral e documental.</p></div>
       </section>
-      <button type="button" onClick={onNewSimulation} className="btn-primary mx-auto mt-8 flex">Iniciar nova simulação</button>
+      <div className="no-print mt-8 flex flex-wrap justify-center gap-3">
+        <button type="button" onClick={() => window.print()} className="btn-secondary flex items-center gap-2"><Printer className="size-4" /> Imprimir aprovação</button>
+        <button type="button" onClick={onNewSimulation} className="btn-primary flex">Iniciar nova simulação</button>
+      </div>
     </main>
   );
 }

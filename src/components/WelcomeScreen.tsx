@@ -7,7 +7,7 @@ interface WelcomeScreenProps {
 
 export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
   return (
-    <div className="min-h-[calc(100vh-5rem)] flex flex-col justify-between py-8 px-4 sm:px-6">
+    <div className="min-h-[calc(100vh-5rem)] flex flex-col justify-between py-8 px-4 sm:px-6 bg-gradient-to-br from-[#06281A] via-[#0D4E33] to-[#051C12]">
       <div className="max-w-4xl mx-auto w-full my-auto">
         {/* Main Hero Card with seamless branding */}
         <div className="relative bg-gradient-to-br from-[#06281A] via-[#0D4E33] to-[#051C12] text-white rounded-3xl p-8 sm:p-16 shadow-2xl border border-[#C5A15A]/30 overflow-hidden text-center">
@@ -25,7 +25,7 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
             <div className="mt-2 text-xs font-semibold tracking-widest text-[#C5A15A] uppercase border-t border-[#C5A15A]/40 pt-2 px-6">
               Investimentos & Soluções Financeiras
             </div>
-            <div className="mt-7 grid grid-cols-4 sm:grid-cols-8 items-center gap-3 sm:gap-5 w-full max-w-3xl px-2">
+            <div className="mt-7 grid grid-cols-3 sm:grid-cols-6 items-center justify-items-center gap-3 sm:gap-5 w-full max-w-3xl px-2">
               {[
                 ['Santander', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-17%20at%2020.50.32-sIlhe6IryD3JK987jKO8A34AAyOYbw.jpeg'],
                 ['Caixa', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-17%20at%2020.50.33%20%282%29-B3X8Eojtpc5vDdQ99vVctVVNvKUIdu.jpeg'],
@@ -34,8 +34,8 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
                 ['Banco do Brasil', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-17%20at%2020.50.32%20%283%29-ySlfobYcj5yiNqj04SXf95x0MPksT1.jpeg'],
                 ['Itaú', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-17%20at%2020.50.32%20%282%29-eJAlsaFRSq7zqCjEGzwxzGCdiySLWX.jpeg'],
               ].map(([name, src]) => (
-                <div key={name} className="h-12 sm:h-16 rounded-xl bg-white/95 p-1.5 flex items-center justify-center shadow-lg">
-                  <img src={src} alt={`Logo ${name}`} className="max-h-full max-w-full object-contain" />
+                <div key={name} className="h-14 sm:h-16 w-full rounded-xl bg-white/95 p-2 flex items-center justify-center shadow-lg">
+                  <img src={src} alt={`Logo ${name}`} className="block h-full w-full object-contain" />
                 </div>
               ))}
             </div>
@@ -61,39 +61,39 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
 
         {/* Feature Highlights beneath */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 shadow-xs">
+          <div className="flex items-center gap-3 p-4 bg-white/10 rounded-2xl border border-white/15 shadow-xs backdrop-blur-sm">
             <div className="w-10 h-10 rounded-xl bg-[#0D4E33]/10 flex items-center justify-center flex-shrink-0">
               <Calculator className="w-5 h-5 text-[#0D4E33]" />
             </div>
             <div>
-              <p className="text-xs font-bold text-gray-900">Simulação Personalizada</p>
-              <p className="text-[11px] text-gray-500">Prazos e parcelas sob medida</p>
+              <p className="text-xs font-bold text-white">Simulação Personalizada</p>
+              <p className="text-[11px] text-emerald-100/75">Prazos e parcelas sob medida</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 shadow-xs">
+          <div className="flex items-center gap-3 p-4 bg-white/10 rounded-2xl border border-white/15 shadow-xs backdrop-blur-sm">
             <div className="w-10 h-10 rounded-xl bg-[#0D4E33]/10 flex items-center justify-center flex-shrink-0">
               <TrendingUp className="w-5 h-5 text-[#0D4E33]" />
             </div>
             <div>
-              <p className="text-xs font-bold text-gray-900">Comparação Financeira</p>
-              <p className="text-[11px] text-gray-500">Carta vs Financiamento Price</p>
+              <p className="text-xs font-bold text-white">Comparação Financeira</p>
+              <p className="text-[11px] text-emerald-100/75">Carta vs Financiamento Price</p>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-200 shadow-xs">
+          <div className="flex items-center gap-3 p-4 bg-white/10 rounded-2xl border border-white/15 shadow-xs backdrop-blur-sm">
             <div className="w-10 h-10 rounded-xl bg-[#0D4E33]/10 flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="w-5 h-5 text-[#0D4E33]" />
             </div>
             <div>
-              <p className="text-xs font-bold text-gray-900">Privacidade Garantida</p>
-              <p className="text-[11px] text-gray-500">Dados seguros em memória (LGPD)</p>
+              <p className="text-xs font-bold text-white">Privacidade Garantida</p>
+              <p className="text-[11px] text-emerald-100/75">Dados seguros em memória (LGPD)</p>
             </div>
           </div>
         </div>
       </div>
 
-      <footer className="text-center pt-8 px-4 text-xs text-gray-400 max-w-2xl mx-auto leading-relaxed">
+      <footer className="text-center pt-8 px-4 text-xs text-emerald-100/70 max-w-2xl mx-auto leading-relaxed">
         Ferramenta de apoio comercial para simulações preliminares. Condições sujeitas à análise e confirmação da instituição responsável.
       </footer>
     </div>
