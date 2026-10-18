@@ -40,7 +40,7 @@ export function ApprovalScreen({ client, creditResult, simulationDate, onNewSimu
       <section className="rounded-3xl bg-gradient-to-br from-[#06281A] via-[#0D4E33] to-[#051C12] p-8 sm:p-12 text-center text-white shadow-2xl">
         <CheckCircle2 className="mx-auto size-16 text-[#D4AF37]" />
         <p className="mt-5 text-xs font-bold uppercase tracking-[0.24em] text-[#D4AF37]">Análise concluída</p>
-        <h1 className="mt-3 text-3xl sm:text-5xl font-black tracking-tight">Análise preliminar concluída</h1>
+        <h1 className="mt-3 text-3xl sm:text-5xl font-black tracking-tight">Análise preliminar concluída e aprovada</h1>
         <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-emerald-50">Sua proposta foi registrada e está pronta para conferência e eventual contratação.</p>
         <p className="mt-5 text-xs text-emerald-100/70">A aprovação final está condicionada à conferência documental e às regras da instituição responsável.</p>
       </section>
