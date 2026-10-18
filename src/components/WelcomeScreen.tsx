@@ -25,16 +25,18 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
             <div className="mt-2 text-xs font-semibold tracking-widest text-[#C5A15A] uppercase border-t border-[#C5A15A]/40 pt-2 px-6">
               Investimentos & Soluções Financeiras
             </div>
-            <div className="mt-7 grid grid-cols-3 sm:grid-cols-6 items-center justify-items-center gap-3 sm:gap-5 w-full max-w-3xl px-2">
+            <div className="mt-7 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 items-center justify-items-center gap-3 sm:gap-4 w-full max-w-5xl px-2">
               {([
-                ['Inter', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logotipo%20Inter%20em%20Laranja%20Vibrante-m7KtfVXmDnv3RFjJzJ9IhgM9yPcSIw.png'],
-                ['Banco do Brasil', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Banco%20do%20Brasil%20em%20Fundo%20Branco-neexvQVQdyYc5YHiNddW8RURY7Ph3R.png'],
-                ['Itaú', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-17%20at%2020.50.32%20%281%29-65K48KV0YbObFxFKaCtS2jTfgVALmL.jpeg'],
-                ['Promove', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-17%20at%2020.16.54-uHop6d2HMgq00c6Aro41omo4Qp9fgW.jpeg'],
-                ['Santander', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-17%20at%2020.50.32-sIlhe6IryD3JK987jKO8A34AAyOYbw.jpeg'],
-              ] as const).map(([name, src]) => (
-                <div key={name} className="h-14 sm:h-16 w-full rounded-xl bg-white/95 p-2 flex items-center justify-center shadow-lg">
-                  <img src={src} alt={`Logo ${name}`} className="block h-full w-full object-contain" />
+                ['Inter', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logotipo%20Inter%20em%20Laranja%20Vibrante-m7KtfVXmDnv3RFjJzJ9IhgM9yPcSIw.png', ''],
+                ['Banco do Brasil', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo%20Banco%20do%20Brasil%20em%20Fundo%20Branco-neexvQVQdyYc5YHiNddW8RURY7Ph3R.png', ''],
+                ['Itaú', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-17%20at%2020.50.32%20%281%29-65K48KV0YbObFxFKaCtS2jTfgVALmL.jpeg', 'scale-[1.8]'],
+                ['Promove', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-17%20at%2020.16.54-uHop6d2HMgq00c6Aro41omo4Qp9fgW.jpeg', ''],
+                ['Santander', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-17%20at%2020.50.32-sIlhe6IryD3JK987jKO8A34AAyOYbw.jpeg', ''],
+                ['Caixa', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-17%20at%2020.50.33%20%282%29-B3X8Eojtpc5vDdQ99vVctVVNvKUIdu.jpeg', ''],
+                ['Sicredi', 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-10-17%20at%2020.50.33%20%281%29-NcpwGNAhK0XQPaRZrMYb125Lnn4xqW.jpeg', ''],
+              ] as const).map(([name, src, imageClass]) => (
+                <div key={name} className="h-14 sm:h-16 w-full min-w-0 rounded-xl bg-white/95 p-2 flex items-center justify-center shadow-lg overflow-hidden">
+                  <img src={src} alt={`Logo ${name}`} className={`block h-full w-full object-contain ${imageClass}`} />
                 </div>
               ))}
             </div>
