@@ -131,7 +131,7 @@ export function CreditConfigScreen({ client, initialInput, onBack, onNext, onEdi
         {/* Seletor de entrada */}
         <div className="card-premium p-6">
           <label className="label-field mb-3">Percentual de entrada</label>
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {ALLOWED_ENTRY_PERCENTAGES.map((pct) => (
               <button
                 key={pct}
@@ -143,7 +143,7 @@ export function CreditConfigScreen({ client, initialInput, onBack, onNext, onEdi
                     : 'border-divider bg-white text-text-secondary hover:border-green-700/30'
                 }`}
               >
-                <span className="text-xl font-bold">{Math.round(pct * 100)}%</span>
+                <span className="text-xl font-bold">{(pct * 100).toFixed(2).replace('.', ',')}%</span>
                 <span className="block text-sm mt-1">
                   {nominalValue > 0 ? formatCurrency(Math.round(nominalValue * pct * 100) / 100) : 'R$ 0,00'}
                 </span>
@@ -173,7 +173,7 @@ export function CreditConfigScreen({ client, initialInput, onBack, onNext, onEdi
                 <span className="font-bold text-green-900">{formatCurrency(Math.round(nominalValue * 1.27 * 100) / 100)}</span>
               </div>
               <div className="flex justify-between py-2 border-b border-divider">
-                <span className="text-text-secondary">Entrada selecionada ({Math.round(entryPercentage * 100)}%)</span>
+                <span className="text-text-secondary">Entrada selecionada ({(entryPercentage * 100).toFixed(2).replace('.', ',')}%)</span>
                 <span className="font-semibold text-gold-500">{formatCurrency(entryValue)}</span>
               </div>
               <div className="flex justify-between py-2">

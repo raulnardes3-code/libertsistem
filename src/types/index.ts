@@ -16,13 +16,14 @@ export interface SpouseData {
 export interface ClientData {
   fullName: string;
   cpf: string;
+  birthDate: string;
   monthlyIncome: number;
   state: string;
   maritalStatus: MaritalStatus | '';
   spouse?: SpouseData;
 }
 
-export type EntryPercentage = 0.08 | 0.09 | 0.10;
+export type EntryPercentage = number;
 
 export interface CreditCardInput {
   nominalValue: number;
@@ -69,7 +70,7 @@ export interface ComparisonMetrics {
   financingTotal: number;
 }
 
-export type SimulationStep = 1 | 2 | 3 | 4;
+export type SimulationStep = 1 | 2 | 3 | 4 | 5;
 
 export interface SimulationState {
   currentStep: SimulationStep;
